@@ -33,5 +33,3 @@ for (let row of studentsList) {
   }
 }
 document.body.appendChild(table);
-
-console.log(theArray)
