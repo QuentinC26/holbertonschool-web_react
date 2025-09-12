@@ -55,3 +55,32 @@ console.log(printTeacher("John", "Doe"))
 
 //task4 :
 
+interface constructorMethod {
+  firstName: string,
+  lastName: string
+}
+
+interface StudentClass {
+  firstName: string,
+  lastName: string,
+  workOnHomework(): string,
+  displayName(): string
+}
+
+class StudentClass {
+  public firstName: string;
+  public lastName: string; 
+
+  public constructor(firstName: string, lastName: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  workOnHomework() {
+    return 'Currently working'
+  }
+
+  displayName() {
+    return this.firstName
+  }
+}
