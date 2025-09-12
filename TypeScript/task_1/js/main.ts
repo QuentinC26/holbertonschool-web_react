@@ -1,3 +1,5 @@
+//task 1
+
 interface Teacher {
     firstName: string,
     lastName: string,
@@ -16,3 +18,40 @@ const teacher3: Teacher = {
 };
 
 console.log(teacher3)
+
+//task 2
+
+interface Directors extends Teacher {
+  numberOfReports: number
+}
+
+const director1: Directors = {
+  firstName: 'John',
+  lastName: 'Doe',
+  location: 'London',
+  fullTimeEmployee: true,
+  numberOfReports: 17,
+};
+
+console.log(director1);
+
+//task 3
+
+interface printTeacherFunction {
+  firstName: string,
+  lastName: string
+}
+
+const person1: printTeacherFunction = {
+  firstName: 'John',
+  lastName: 'Doe'
+}
+
+function printTeacher(firstName: string, lastName: string) {
+  return firstName[0] + '.' + ' ' + lastName
+}
+
+console.log(printTeacher("John", "Doe"))
+
+//task4 :
+
