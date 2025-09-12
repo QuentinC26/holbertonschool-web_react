@@ -26,10 +26,10 @@ const theArray = [ [student1.firstName, student1.location],
 
 let table = document.createElement('table');
 for (let row of studentsList) {
-  table.insertRow();
-  for (let cell in row) {
-    let newCell = table.rows[table.rows.length - 1].insertCell();
-    newCell.textContent = cell;
+  let newRow = table.insertRow();
+  for (let key in row) {
+    let newCell = newRow.insertCell();
+    newCell.textContent = row[key];
   }
 }
 document.body.appendChild(table);
