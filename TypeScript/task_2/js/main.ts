@@ -43,15 +43,15 @@ class Teacher {
 function createEmployee(salary: number | string) {
   if (typeof(salary) === 'number') {
     if (salary < 500) {
-      return 'Teacher'
+      return new Teacher();
     } else {
-      return 'Director'
+      return new Director();
     }
   } else if (typeof(salary) === 'string') {
-    if (parseInt(salary)) {
-      console.log(salary)
+    if (Number(salary) < 500) {
+      return new Teacher();
     } else {
-      return 'Director'
+      return new Director();
     }
   }
 }
@@ -59,3 +59,24 @@ function createEmployee(salary: number | string) {
 console.log(createEmployee(200));
 console.log(createEmployee(1000));
 console.log(createEmployee('$500'));
+
+// task 6
+
+function isDirector(employee) {
+  if (employee instanceof Director) {
+    return true
+  } else {
+    return false
+  }
+}
+
+function executeWork(employee) {
+    if (employee instanceof Director) {
+      return employee.workDirectorTasks()
+  } else if (employee instanceof Teacher){
+      return employee.workTeacherTasks()
+  }
+}
+
+console.log(executeWork(createEmployee(200)));
+console.log(executeWork(createEmployee(1000)));
