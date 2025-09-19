@@ -67,7 +67,7 @@ interface StudentClass {
   displayName(): string
 }
 
-class StudentClass {
+class StudentClass implements StudentClass {
   public firstName: string;
   public lastName: string; 
 
